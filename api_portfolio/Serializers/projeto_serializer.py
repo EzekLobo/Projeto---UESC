@@ -5,3 +5,4 @@ class ProjetoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Projeto
         fields = '__all__'
+

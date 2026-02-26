@@ -1,1 +1,3 @@
 from .projeto_serializer import ProjetoSerializer
+from .informacoes_pessoais_serializer import InformacoesPessoaisSerializer
+from .experiencia_serializer import ExperienciaSerializer
