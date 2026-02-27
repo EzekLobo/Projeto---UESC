@@ -79,16 +79,13 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600
-    )
-}
-
-DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dportfolio',
+        'USER': 'portfolio_cwhe_user',
+        'PASSWORD': 'GXTcusRTsaePNaIr1dgZ2iVupTqX4ASW',
+        'HOST': 'dpg-d6ghttjuibrs739d7vjg-a',
+        'PORT': '5432',
     }
 }
 
