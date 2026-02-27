@@ -10,7 +10,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000/api/v1
  */
 export async function getPerfil(): Promise<Perfil> {
   const res = await fetch(`${API_URL}/perfil/`, { 
-    next: { revalidate: 3600 }, // Cache de 1 hora
+    next: { revalidate: 0 }, 
     headers: { 'Content-Type': 'application/json' }
   });
 
@@ -31,7 +31,7 @@ export async function getPerfil(): Promise<Perfil> {
  */
 export async function getExperiencias(): Promise<Experiencia[]> {
   const res = await fetch(`${API_URL}/experiencias/`, { 
-    next: { revalidate: 3600 } 
+    next: { revalidate: 0 } 
   });
 
   if (!res.ok) throw new Error("Erro ao carregar experiências");
@@ -39,12 +39,10 @@ export async function getExperiencias(): Promise<Experiencia[]> {
   return res.json();
 }
 
-/**
- * Busca a lista de projetos do portfólio
- */
+
 export async function getProjetos(): Promise<Projeto[]> {
   const res = await fetch(`${API_URL}/projetos/`, { 
-    next: { revalidate: 3600 } 
+    next: { revalidate: 0 } 
   });
 
   if (!res.ok) throw new Error("Erro ao carregar projetos");

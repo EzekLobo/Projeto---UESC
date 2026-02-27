@@ -1,5 +1,6 @@
 export interface Perfil {
   nome: string;
+  cargo: string;
   bio: string;
   email: string;
   linkedin: string;

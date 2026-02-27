@@ -24,7 +24,7 @@ export default function ProjectSlider({ projetos = [] }: { projetos: Projeto[] }
           >
             <div className="h-52 relative bg-gray-900">
               {projeto.capa ? (
-                <Image src={projeto.capa} alt={projeto.titulo} fill className="object-cover" />
+                <Image src={projeto.capa} alt={projeto.titulo} fill unoptimized className="object-cover" />
               ) : (
                 <div className="flex items-center justify-center h-full text-xs text-gray-700">Sem Capa</div>
               )}
