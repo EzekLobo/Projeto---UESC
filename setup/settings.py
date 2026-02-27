@@ -129,3 +129,11 @@ MEDIA_URL = '/media/'
 
 # Pasta física no seu computador onde as fotos ficarão
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# settings.py
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+}
