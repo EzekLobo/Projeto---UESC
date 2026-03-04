@@ -1,3 +1,5 @@
 from .projeto_viewset import ProjetoViewSet
 from .informacoes_pessoais_viewset import InformacoesPessoaisViewSet
 from .experiencia_viewset import ExperienciaViewSet
+from .controle_dispositivo_viewset import ControleDispositivoViewSet
+from .leitura_ambiente_viewset import LeituraAmbienteViewSet

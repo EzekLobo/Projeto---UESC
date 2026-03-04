@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .Models import Projeto, InformacoesPessoais, Experiencia
+from .Models import Projeto, InformacoesPessoais, Experiencia, ControleDispositivo, LeituraAmbiente
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
@@ -21,4 +21,25 @@ class ExperienciaAdmin(admin.ModelAdmin):
 @admin.register(InformacoesPessoais)
 class InformacoesPessoaisAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email', 'telefone')
-    
+
+# ==========================================
+# ADMIN DOS DISPOSITIVOS IOT
+# ==========================================
+
+@admin.register(LeituraAmbiente)
+class LeituraAmbienteAdmin(admin.ModelAdmin):
+    # Mostra os dados térmicos e a hora exata da leitura
+    list_display = ('id', 'dispositivo', 'temperatura', 'umidade', 'data_hora')
+    list_display_links = ('id', 'dispositivo')
+    # Filtros úteis para achar leituras de dias específicos ou de placas diferentes
+    list_filter = ('dispositivo', 'data_hora')
+    search_fields = ('dispositivo',)
+
+@admin.register(ControleDispositivo)
+class ControleDispositivoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'dispositivo', 'mandar_oi')
+    list_display_links = ('id', 'dispositivo')
+    # Permite você ativar o "Oi" direto pela tela de listagem do Admin!
+    list_editable = ('mandar_oi',) 
+    list_filter = ('mandar_oi',)
+    search_fields = ('dispositivo',)

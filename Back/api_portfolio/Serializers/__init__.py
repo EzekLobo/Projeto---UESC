@@ -1,3 +1,5 @@
 from .projeto_serializer import ProjetoSerializer
 from .informacoes_pessoais_serializer import InformacoesPessoaisSerializer
 from .experiencia_serializer import ExperienciaSerializer
+from .controle_dispositivo_serializer import ControleDispositivoSerializer
+from .leitura_ambiente_serializer import LeituraAmbienteSerializer
